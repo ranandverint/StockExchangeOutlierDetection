@@ -1,7 +1,3 @@
-Here's a detailed `README.md` file for your project:
-
----
-
 # Stock Exchange Outlier Detection
 
 This project processes stock exchange data to detect outliers based on stock prices. It uses a CSV file format for input and output and identifies outliers as data points that exceed 2 standard deviations from the mean of 30 consecutive data points, sampled randomly from the input.
@@ -124,7 +120,3 @@ The application is designed to handle a variety of errors:
 
 - **Performance**: The script is optimized for processing multiple files with minimal memory overhead. However, it processes one file at a time.
 - **Scalability**: The script can easily be extended to handle additional stock exchanges by modifying the input and the number of files to process.
-
----
-
-This `README.md` file provides all the information you need to set up, run, and understand the outlier detection process for stock exchange data.
