@@ -1,0 +1,11 @@
+# Ignore virtual environment directories
+myenv/
+
+# Ignore output CSV files (outliers output files)
+*_outliers.csv
+
+# Ignore system files
+.DS_Store
+
+# Ignore editor-specific files
+.vscode/
