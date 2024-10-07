@@ -16,8 +16,8 @@ To run this project, you need to have Python installed. The code has been tested
 - **Python 3.9**
 
 You also need to install the following Python libraries:
-- **pandas**: `1.5.3`
-- **numpy**: `1.21.6`
+- **pandas**: `2.2.3`
+- **numpy**: `2.0.2`
 
 Ensure you have a terminal or command-line interface available to execute the script.
 
@@ -51,7 +51,7 @@ pip install -r requirements.txt
 #### Installing Manually
 You can install the required libraries by running:
 ```bash
-pip install pandas==1.5.3 numpy==1.21.6
+pip install pandas==2.2.3 numpy==2.0.2
 ```
 
 Verify the installation by running:
