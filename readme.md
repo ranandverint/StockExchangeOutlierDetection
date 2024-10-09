@@ -6,9 +6,10 @@ This project processes stock exchange data to detect outliers based on stock pri
 1. [Prerequisites](#prerequisites)
 2. [Setup](#setup)
 3. [How to Run](#how-to-run)
-4. [Assumptions](#assumptions)
-5. [Error Handling](#error-handling)
-6. [Additional Information](#additional-information)
+4. [Docker based implementation](#docker-based-implementation)
+5. [Assumptions](#assumptions)
+6. [Error Handling](#error-handling)
+7. [Additional Information](#additional-information)
 
 ## Prerequisites
 
@@ -99,6 +100,23 @@ For each processed CSV file, an output file will be generated in the `output_dat
 | FLTR     | 03-09-2023   | 16274.56 | 16340  | -65.44    | -0.4%             | Below              |
 
 - **Timestamp** in the output will be in `dd-mm-yyyy` format, matching the input format.
+
+
+## Docker based implementation
+The same script can be implemented using docker containers too. This helps in creating a container during runtime, execute the script inside the container & produce results & then the container is terminated.
+I have added a `dockerfile` to achieve the same.
+
+### How to run?
+- Build the custom image:
+  ```bash
+  docker build -t stock-exchange-outlier-detection .
+  ```
+- Run the container:
+  ```bash
+  docker run -v $(pwd)/stock_price_data_files/NYSE:/app/input_data -v $(pwd)/output_data:/app/output_data stock-exchange-outlier-detection 
+  ```
+  Note: Replace the `NYSE` with the stock-id that you want to detect outlier from. Here `-v` flag will mount persistent volume to the container & inturn, it will be able to read the input data as well as write the output data to your local volume & the data won't be lost after the container is terminated.
+
 
 ## Assumptions
 
