@@ -11,7 +11,7 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Alternatively, if you are not using requirements.txt, install dependencies manually
-# RUN pip install pandas==1.5.3 numpy==1.21.6
+# RUN pip install pandas==2.2.3 numpy==2.0.2
 
 # Copy the current directory contents (your script and files) into the container at /app
 COPY . /app
