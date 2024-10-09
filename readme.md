@@ -89,7 +89,7 @@ Where:
 
 ### Example
 ```bash
-python3 outliers_argparse.py ./stock_price_data_files/LSE/ 2
+python3 outliers.py ./stock_price_data_files/LSE/ 2
 ```
 
 ### Output:
