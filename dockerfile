@@ -30,4 +30,4 @@ ENV INPUT_FOLDER=/app/input_data
 ENV OUTPUT_FOLDER=/app/output_data
 
 # Command to run the Python script, passing the folder paths and number of files to process
-CMD ["python", "outlier_detection.py", "/app/input_data", "2"]
+CMD ["python", "outliers.py", "/app/input_data", "2"]

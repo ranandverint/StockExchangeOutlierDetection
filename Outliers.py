@@ -74,7 +74,7 @@ def process_files(stock_exchange_folder: str, num_files: int):
         outliers = detect_outliers(data, stock_id)
         if not outliers.empty:
             # Save outliers to CSV
-            output_file = f"{stock_id}_outliers.csv"
+            output_file = f"output_data/{stock_id}_outliers.csv"
             outliers.to_csv(output_file, index=False)
             print(f"Outliers saved to {output_file}")
         else:
