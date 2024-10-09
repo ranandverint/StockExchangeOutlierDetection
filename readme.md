@@ -77,8 +77,7 @@ Ensure your input files are placed inside a folder. The input files should be CS
 
 ### Step 2: Running the Script
 
-To execute the script, run the following command from the terminal:
-
+This script takes 2 parameters as arguments. To execute the script, run the following command from the terminal:
 ```bash
 python3 outliers.py <path_to_data_folder> <number_of_files_to_process>
 ```
@@ -103,6 +102,11 @@ For each processed CSV file, an output file will be generated in the same direct
 
 ## Assumptions
 
+- The input zip file has been extracted & the content renamed to make it simpler and added to the root of this repository.
+- Multiple types of representation of the same code has been implemented, you can find other versions of this code in the directory `alternate_code\`
+  - Version of code with inline arguments
+  - Version of code using native python libraries (without using pandas & numpy)
+ 
 - The input CSV files are well-formed with three columns: `Stock-ID`, `Timestamp`, and `Price`.
 - The `Timestamp` is provided in the format `dd-mm-yyyy`.
 - If a file contains fewer than 30 data points, it will raise an error and skip processing for that file.
