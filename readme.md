@@ -159,3 +159,4 @@ The application is designed to handle a variety of errors:
 - **Performance**: The script is optimized for processing multiple files with minimal memory overhead. However, it processes one file at a time.
 - **Scalability**: The script can easily be extended to handle additional stock exchanges by modifying the input and the number of files to process.
 - I have taken help from AI to generate this README & then edited on top of it.
+- This is a public repository accessible to everyone, but the `main` branch is protected and any change can be landed to it only via an approved _**Pull Request**_.
