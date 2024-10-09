@@ -92,7 +92,7 @@ python3 outliers.py ./stock_price_data_files/LSE/ 2
 ```
 
 ### Output:
-For each processed CSV file, an output file will be generated in the same directory, named as `<stock-id>_outliers.csv`. The output file will contain the following columns:
+For each processed CSV file, an output file will be generated in the `output_data\` directory, named as `<stock-id>_outliers.csv`. The output file will contain the following columns:
 
 | Stock-ID | Timestamp    | Price    | Mean   | Deviation | Percent_Deviation | Threshold_Exceeded |
 |----------|--------------|----------|--------|-----------|-------------------|--------------------|
