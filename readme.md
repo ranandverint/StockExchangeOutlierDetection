@@ -117,6 +117,22 @@ I have added a `dockerfile` to achieve the same.
   ```
   Note: Replace the `NYSE` with the stock-id that you want to detect outlier from. Here `-v` flag will mount persistent volume to the container & inturn, it will be able to read the input data as well as write the output data to your local volume & the data won't be lost after the container is terminated.
 
+### Additional work
+I have compiled an image and uploaded on dockerhub (as mentioned in the challenge document).
+Use the below command to pull my docker image to your local machine and execute the script:
+
+- Step 1: Pull the docker image:
+  ```bash
+  docker pull ranand5855/outlier-detection:v1.0
+  ```
+- Step 2: Run the container:
+  ```bash
+  docker run -v $(pwd)/stock_price_data_files/<stock-id>:/app/input_data -v $(pwd)/output_data:/app/output_data ranand5855/outlier-detection:v1.0
+  ```
+  Replace the `<stock-id>` with the stock id of your interest, here it can be one of these:
+  - LSE
+  - NASDAQ
+  - NYSE
 
 ## Assumptions
 
@@ -142,3 +158,4 @@ The application is designed to handle a variety of errors:
 
 - **Performance**: The script is optimized for processing multiple files with minimal memory overhead. However, it processes one file at a time.
 - **Scalability**: The script can easily be extended to handle additional stock exchanges by modifying the input and the number of files to process.
+- I have taken help from AI to generate this README & then edited on top of it.
