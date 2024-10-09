@@ -2,13 +2,14 @@ import pandas as pd
 import numpy as np
 import os
 import random
-
-# To install all the required packages, run the following command : "pip install -r requirements.txt"
+import argparse
 
 # Function 1: Get 30 consecutive data points starting from a random timestamp
 def get_random_30_data_points(file_path: str) -> pd.DataFrame:
     try:
-        data = pd.read_csv(file_path, parse_dates=['Timestamp'], dayfirst=True)
+        # Adjusting column names for the provided data format: Stock-ID, Timestamp, Price
+        data = pd.read_csv(file_path, header=None, names=["Stock-ID", "Timestamp", "Price"], parse_dates=['Timestamp'], dayfirst=True)
+        
         if len(data) < 30:
             raise ValueError(f"File {file_path} contains fewer than 30 data points.")
         
@@ -43,6 +44,9 @@ def detect_outliers(data: pd.DataFrame, stock_id: str) -> pd.DataFrame:
             lambda row: "Above" if row['Price'] > upper_threshold else "Below", axis=1
         )
 
+        # Format the Timestamp back to 'dd-mm-yyyy' before returning
+        outliers['Timestamp'] = outliers['Timestamp'].dt.strftime('%d-%m-%Y')
+
         return outliers
     except Exception as e:
         print(f"Error detecting outliers: {e}")
@@ -76,8 +80,14 @@ def process_files(stock_exchange_folder: str, num_files: int):
         else:
             print(f"No outliers found in {file}")
 
+# Set up argument parsing
+def parse_args():
+    parser = argparse.ArgumentParser(description="Process stock exchange data for outliers.")
+    parser.add_argument('stock_exchange_folder', type=str, help="Path to the stock exchange data folder")
+    parser.add_argument('num_files', type=int, help="Number of files to process")
+    return parser.parse_args()
+
 # Usage
 if __name__ == "__main__":
-    stock_exchange_folder = "path_to_exchange_data"
-    num_files_to_sample = 2  # Change based on input
-    process_files(stock_exchange_folder, num_files_to_sample)
+    args = parse_args()
+    process_files(args.stock_exchange_folder, args.num_files)
