@@ -80,7 +80,7 @@ Ensure your input files are placed inside a folder. The input files should be CS
 To execute the script, run the following command from the terminal:
 
 ```bash
-python outlier_detection.py <path_to_data_folder> <number_of_files_to_process>
+python3 outliers.py <path_to_data_folder> <number_of_files_to_process>
 ```
 
 Where:
@@ -89,7 +89,7 @@ Where:
 
 ### Example
 ```bash
-python outlier_detection.py ./data/ 2
+python3 outliers_argparse.py ./stock_price_data_files/LSE/ 2
 ```
 
 ### Output:
